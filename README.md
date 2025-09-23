@@ -44,3 +44,7 @@ python manage.py startapp mi_app
 git add .
 git commit -m "Creado proyecto Django con app inicial"
 git push origin main
+
+
+python manage.py runserver
+
