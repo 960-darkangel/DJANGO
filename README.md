@@ -1,3 +1,5 @@
+#CLONACIÓN DE REPOSITORIO DE DJANGO EN DEBIAN-TILIX
+
 git clone https://github.com/960-darkangel/DJANGO.git
 
 cd DJANGO
