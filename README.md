@@ -1,88 +1,46 @@
-#CLONACIÓN DE REPOSITORIO DE DJANGO EN DEBIAN-TILIX
-
+# 1. Clonar repo de GitHub
 git clone https://github.com/960-darkangel/DJANGO.git
-
 cd DJANGO
 
-nano .gitignore(
-# Entornos virtuales
-env/
-venv/
-ENV/
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
-*.sqlite3
-
-# Archivos de configuración locales
-*.env
-*.log
-*.pot
-*.py[cod]
-*~ 
-.DS_Store
-.idea/
-.vscode/
-
-# Archivos de Django
-db.sqlite3
-/media/
-staticfiles/
-
-# Archivos de migraciones que no quieras subir (opcional, aunque muchos sí los suben)
-*/migrations/__pycache__/
-*/migrations/*.pyc
-*/migrations/*.pyo
-
-# Archivos de compilación / paquetes
-*.egg
-*.egg-info/
-dist/
-build/
-.eggs/
-
-# Archivos de testing/coverage
-.coverage
-.tox/
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-
-# Archivos de Git
-.gitignore
-)
-
-ls -a
-./  ../  .git/  .gitignore
+# 2. Crear .gitignore
+nano .gitignore   # (o notepad .gitignore si no tenés nano)
+# pega las reglas que quieras ignorar (env/, db.sqlite3, __pycache__/ etc.)
 
 git add .gitignore
+git commit -m "Agregado .gitignore inicial"
+git push origin main
 
-git branch
-* main
-
-git commit -m "main"
-******* main
-
+# 3. Verificar versión de Python
 python --version
-Python 3.12.5
+# si no funciona, probá:
+py --version
 
-python3 -m venv env
+# 4. Crear entorno virtual
+python -m venv env
 
-source env/bin/activate
+# 5. Activar entorno virtual
+# Opción A (Git Bash):
+source env/Scripts/activate
+# Opción B (cmd de Windows):
+env\Scripts\activate.bat
 
-python install django
+# 6. Actualizar pip e instalar Django
+python -m pip install --upgrade pip
+python -m pip install django
 
-python3 -m pip install django --upgrade pip
+# 7. Guardar dependencias en requirements.txt
+pip freeze > requirements.txt
 
-touch requeriments.txt
+git add requirements.txt
+git commit -m "Agregado requirements.txt"
+git push origin main
 
-python3 -m pip frezze > requeriments-txt
+# 8. Crear proyecto Django en la carpeta actual
+django-admin startproject SO_i210 .
 
-django-admin startproject SO_i210
+# 9. Crear una aplicación dentro del proyecto
+python manage.py startapp mi_app
 
-python3 -m pip install django
-
-python3 manage.py startapp
+git add .
+git commit -m "Creado proyecto Django con app inicial"
+git push origin main
