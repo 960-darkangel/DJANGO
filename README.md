@@ -4,7 +4,47 @@ cd DJANGO
 
 # 2. Crear .gitignore
 nano .gitignore   # (o notepad .gitignore si no tenés nano)
-# pega las reglas que quieras ignorar (env/, db.sqlite3, __pycache__/ etc.)
+.gitignore recomendado
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Entornos virtuales ---
+env/
+venv/
+ENV/
+*.pyo
+*.pyd
+
+# --- Archivos de base de datos (SQLite) ---
+db.sqlite3
+
+# --- Migraciones cacheadas ---
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+
+# --- Archivos de Django ---
+media/
+staticfiles/
+
+# --- Archivos locales ---
+*.log
+*.pot
+*.env
+*.ini
+*.cfg
+
+# --- IDEs y editores ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Archivos de sistema ---
+.DS_Store
+Thumbs.db
 
 git add .gitignore
 git commit -m "Agregado .gitignore inicial"
