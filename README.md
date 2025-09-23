@@ -10,39 +10,39 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# --- Entornos virtuales ---
+--- Entornos virtuales ---
 env/
 venv/
 ENV/
 *.pyo
 *.pyd
 
-# --- Archivos de base de datos (SQLite) ---
+--- Archivos de base de datos (SQLite) ---
 db.sqlite3
 
-# --- Migraciones cacheadas ---
+--- Migraciones cacheadas ---
 */migrations/__pycache__/
 */migrations/*.pyc
 */migrations/*.pyo
 
-# --- Archivos de Django ---
+--- Archivos de Django ---
 media/
 staticfiles/
 
-# --- Archivos locales ---
+--- Archivos locales ---
 *.log
 *.pot
 *.env
 *.ini
 *.cfg
 
-# --- IDEs y editores ---
+--- IDEs y editores ---
 .vscode/
 .idea/
 *.swp
 *~
 
-# --- Archivos de sistema ---
+--- Archivos de sistema ---
 .DS_Store
 Thumbs.db
 
